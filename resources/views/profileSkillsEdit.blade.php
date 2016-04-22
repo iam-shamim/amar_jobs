@@ -45,70 +45,36 @@
                 <div class="col-md-9 col-sm-9">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> My Skills </a> </h4>
+                            <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse">Skill Edit </a> </h4>
                         </div>
-                        <div class="panel-body  ">
+                        <div class="panel-body">
                             <div class="row">
-                                <form action="{!! route('profile.skills.store') !!}" method="post">
-                                    <div class="col-md-7">
+                                <form action="{!! route('profile.skills.update',$mySkill->id) !!}" method="post">
+                                    <div class="col-md-10 col-md-offset-1">
                                         <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                        <input type="hidden" name="_method" value="put">
                                         <select class="js-example-basic-single form-control" name="skillName">
                                             @while(list($key,$val)=each($skills))
-                                                <option value="{!! $key !!}">{!! $val !!}</option>
+                                                <?php
+                                                    if($mySkill->skillID==$key){
+                                                        $selected='selected';
+                                                    }else{
+                                                        $selected='';
+
+                                                    }
+                                                ?>
+                                                <option value="{!! $key !!}" {!! $selected !!}>{!! $val !!}</option>
                                             @endwhile
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
-                                        <input type="number" class="form-control" placeholder="Skill Range" name="skillRange" value="{!! old('skillRange') !!}" title="Skill Range" style="height: 32px">
+                                    <div class="col-md-10 col-md-offset-1 m-t5">
+                                        <input type="number" class="form-control" placeholder="Skill Range" name="skillRange" value="{!! $mySkill->skillRange !!}" title="Skill Range" style="height: 32px">
                                     </div>
-                                    <div class="col-md-2">
-                                        <button class="no-border no-bg"><i class="fa fa-plus-circle btn btn-primary btn-block m-b5"> Add Skill </i></button>
+                                    <div class="col-md-10 col-md-offset-1 m-t5">
+                                        <input type="submit" class="form-control btn-primary" value="Update Skill">
                                     </div>
                                 </form>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <td width="5%">#</td>
-                                            <td>Skills</td>
-                                            <td>Complete</td>
-                                            <td width="15%">Action</td>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php $sl=1; ?>
-                                        @foreach($mySkills AS $key=>$val)
-                                            <?php
-                                                if($val->skillRange>=80){
-                                                    $skillRangeClass='progress-bar-success';
-                                                }else if($val->skillRange>=50){
-                                                    $skillRangeClass='progress-bar-info';
-                                                }else if($val->skillRange>=33){
-                                                    $skillRangeClass='progress-bar-warning';
-                                                }else{
-                                                    $skillRangeClass='progress-bar-danger';
-                                                }
-                                            ?>
-                                            <tr  class="{!! $val->id !!}">
-                                                <td>{!! $sl++ !!}</td>
-                                                <td>{!! $val->skillName!!}</td>
-                                                <td>
-                                                    <div class="progress" title="{!! $val->skillRange !!}%">
-                                                        <div class="progress-bar {!! $skillRangeClass !!} progress-bar-striped" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width: {!! $val->skillRange !!}%"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <a href="{!! route('profile.skills.edit',$val->id) !!}"><i class="fa fa-pencil-square btn-sm btn-info"></i></a>
-                                                    <a href="{!! route('profile.skills.destroy',$val->id) !!}" class="delete" data-token="{!! csrf_token() !!}" data-id="{!! $val->id!!}"><i class="fa fa-trash-o btn-sm btn-danger"></i></a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -29,6 +29,7 @@ a:hover{
 .no-border{
 	border: none !important;
 }
+.no-bg{ background: none !important;}
 
 
 /*===============Form Style==============*/
@@ -499,7 +500,7 @@ h2.product-title{
 .post-footer{
 	border-top: 1px solid #DDD;
 	padding-top: 15px;
-}	
+}
 
 .breadcrumb{
 	font-size: 12px;
@@ -573,7 +574,7 @@ h2.product-title{
 
 .actions-table{
 	list-style: none;
-	margin-left: -30px; 
+	margin-left: -30px;
 }
 
 .actions-table li{
@@ -593,6 +594,14 @@ h2.product-title{
 .profile_avatar img{
 	max-height: 150px;
 	background-color: #FFF;
+	padding: 3px;
+	border-radius: 5px;
+	-moz-border-radius : 5px;
+	-webkit-border-radius : 5px;
+}
+.institute_avatar img{
+	max-height: 150px;
+	background-color: #BABABA;
 	padding: 3px;
 	border-radius: 5px;
 	-moz-border-radius : 5px;
@@ -875,3 +884,10 @@ h2.product-title{
 }
 .alert ul li{font-size: .8em;}
 .search-input-icon{height:46px;}
+label[for="instituteImage"]{position: relative;}
+label[for="instituteImage"]:hover:after{content: 'Add New Logo';color:#fff;background: #000;height: 50px;width: 96.5%;float: left;position: absolute;bottom: 0px;border-radius: 0px 0px 5px 5px;margin-left: 3px;opacity: 0.8;text-align: center;line-height: 44px;cursor: pointer;}
+label[for="instituteImage"].active:after{content: 'Add Logo';color:#fff;background: #000;height: 50px;width: 96.5%;float: left;position: absolute;bottom: 0px;border-radius: 0px 0px 5px 5px;margin-left: 3px;opacity: 0.8;text-align: center;line-height: 44px;cursor: pointer;}
+
+
+
+

@@ -1,4 +1,11 @@
 <?php
+Route::group(['middleware' => ['web','auth'],'prefix'=>'ajax'], function () {
+
+});
+Route::group(['middleware' => ['web'],'prefix'=>'ajax','as'=>'ajax.'], function () {
+    Route::get('education/search',['as'=>'education.search','uses'=>'educationController@ajaxSearch']);
+});
+
 Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/logout',['as'=>'logout','uses'=>'loginController@logout']);
     Route::resource('skills','skillsController',['parameters'=> ['skills'=>'id']]);
@@ -13,6 +20,13 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/profile',['as'=>'profile','uses'=>'profileController@index']);
     Route::put('profile',['as'=>'profile.update','uses'=>'profileController@update']);
     Route::get('profile/skills',['as'=>'profile.skills','uses'=>'profileSkillsController@index']);
+    Route::post('profile/skills',['as'=>'profile.skills.store','uses'=>'profileSkillsController@store']);
+    Route::delete('profile/skills/{id}',['as'=>'profile.skills.destroy','uses'=>'profileSkillsController@destroy']);
+    Route::get('profile/skills/{id}/edit',['as'=>'profile.skills.edit','uses'=>'profileSkillsController@edit']);
+    Route::put('profile/skills/{id}',['as'=>'profile.skills.update','uses'=>'profileSkillsController@update']);
+    Route::get('education',['as'=>'education.index','uses'=>'educationController@index']);
+    Route::get('education/add',['as'=>'education.add','uses'=>'educationController@add']);
+    Route::post('education/add',['as'=>'education.store','uses'=>'educationController@store']);
 });
 Route::group(['middleware' => ['web','notAuth']], function () {
     Route::get('/password/forgot',['as'=>'password.forgot.form','uses'=>'forgotController@index']);

@@ -51,6 +51,7 @@
 <!-- Essentials -->
 <script src="{!! url('bootstrap/js/bootstrap.min.js') !!}"></script>
 <script src="{!! url('plugins/counter/jquery.countTo.js') !!}"></script>
+<script src="{!! url('js/main.js') !!}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         // ==================Counter====================

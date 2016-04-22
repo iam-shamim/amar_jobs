@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\model\degrees;
+use App\model\degrwees;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

@@ -55,7 +55,8 @@ class loginController extends Controller
             $id=Auth::user()->id;
             DB::table('reset_password')->where('userID',$id)->delete();
             if($userStatus=='Active'){
-                $input->session()->put(['userType'=>Auth::user()->userType]);
+                $userID=DB::table('profiles')->where('userID',Auth::user()->id)->first();
+                $input->session()->put(['profilesID'=>$userID->id]);
                 return redirect()->intended(url('/profile'));
             }else if($userStatus=='InActive'){
                 $input->session()->put(['userName'=>Auth::user()->userName,'password'=>$input->password,'userID'=>Auth::user()->id,'resend'=>url('mail/resend')]);
@@ -64,14 +65,11 @@ class loginController extends Controller
             }else{
                 Auth::logout();
                 $validator->errors()->add('errorBlocked', 'You are blocked. please contact to admin.');
-                    return redirect(route('login.create'))
-                        ->withErrors($validator);
+                    return redirect(route('login.create'))->withErrors($validator);
             }
-
         }else{
             $validator->errors()->add('errorNotFound', 'User or password not matched.');
-            return redirect(route('login.create'))
-                ->withErrors($validator);
+            return redirect(route('login.create'))->withErrors($validator);
         }
     }
     public function activationForm(){
