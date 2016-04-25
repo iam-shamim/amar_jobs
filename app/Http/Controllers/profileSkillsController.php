@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\model\Profile;
 use DB;
 use Validator;
+use Session;
 class profileSkillsController extends Controller
 {
     public function index(){
@@ -58,6 +59,7 @@ class profileSkillsController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         $profileSkills=profileSkills::findOrFail($id);
+        $data=profileSkills::where('id',$id)->where('profileID',$profilesID)->firstOrFail();
         $profileSkills->profileID=$profilesID;
         $profileSkills->skillID=$input->skillName;
         $profileSkills->skillRange=$input->skillRange;
@@ -65,7 +67,8 @@ class profileSkillsController extends Controller
         return redirect(route('profile.skills'));
     }
     public function destroy($id){
-        $data=profileSkills::findOrFail($id);
+        $profileID=Session::get('profilesID');
+        $data=profileSkills::where('id',$id)->where('profileID',$profileID);
         $data->delete();
     }
 }

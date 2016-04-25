@@ -122,6 +122,9 @@ class educationController extends Controller{
             $data[]=[
                 "id"=>$idValJson,
                 'text'=>"{$value->text}",
+                'city'=>"{$value->city},",
+                'district'=>"{$value->district}",
+                'website'=>"{$value->website}",
                 'img'=>url('img/institutes/'.$value->img)
             ];
         }
@@ -130,11 +133,18 @@ class educationController extends Controller{
                 0=>[
                     "id"=>'0',
                     'text'=>'not found',
+                    'city'=>" ",
+                    'district'=>" ",
+                    'website'=>" ",
                     'img'=>url('img/icon/404.gif')
                 ]
             ]);
         }
         return json_encode($data);
-
+    }
+    public function destroy($id){
+        $profileID=Session::get('profilesID');
+        $data=education::where('id',$id)->where('profileID',$profileID);
+        $data->delete();
     }
 }

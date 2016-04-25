@@ -156,9 +156,11 @@
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-custom btn-block"><i class="fa fa-save"></i> Save Education</button>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn-custom btn-block"><i class="fa fa-save"></i> Save Education</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -168,8 +170,6 @@
             </div>
         </div>
     </section>
-
-    <script src="{!! url('plugins/filestyle/bootstrap-filestyle.min.js') !!}"></script>
     <script src="{!! url('plugins/jquery-ui/jquery-ui.min.js') !!}"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
@@ -217,8 +217,21 @@
             escapeMarkup: function (markup) { return markup; },
             minimumInputLength: 2,
             templateResult: function(data){
-                return '<div>' +
-                            '<img width="30" src="'+data.img+'"> '+data.text+
+                console.log(data);
+                if(data.id=='0'){
+
+                    return '<div>' +
+                                '<img width="30" src="'+data.img+'"> '+data.text+
+                            '</div>';
+                }
+                return '<div class="instituteSearchResultMain">' +
+                            '<div class="instituteSearchResultImgDiv">' +
+                                '<img width="30" src="'+data.img+'"> '+
+                            '</div>' +
+                            '<div class="instituteSearchResultInfoDiv">' +
+                                '<p>'+data.text+'</p>'+
+                                '<p>'+data.city+''+data.district+' '+data.website+'</p>'+
+                            '</div>'+
                        '</div>';
             }
         });
@@ -240,4 +253,11 @@
             $('[for=instituteImage].active').removeClass('active');
         };
     </script>
+    <style>
+        .instituteSearchResultMain{display: block;}
+        .instituteSearchResultImgDiv{ width:10%;float: left;margin-right: 5px;}
+        .instituteSearchResultImgDiv img{ width:100%}
+        .instituteSearchResultInfoDiv{}
+        .instituteSearchResultInfoDiv p+p{line-height:10px;}
+    </style>
 @endsection

@@ -29,7 +29,7 @@
         </div>
         <div class="container">
             <div class="row">
-                @section('LeftMenuMyProfileEducation','active-profile')
+                @section('LeftMenuMyProfileCoverLetter','active-profile')
                 @include('include.profileLeftMenu')
                 <div class="col-md-9 col-sm-9">
                     @if($errors->any())
@@ -42,53 +42,32 @@
                         </div>
                     @endif
                 </div>
-                <div class="col-xs-9 m-b10">
-                    <a href="{!! route('education.add') !!}" class="btn btn-success pull-right">Add Education</a>
-                </div>
                 <div class="col-md-9 col-sm-9">
-                    @foreach($education AS $key=>$value)
-                        <div class="panel panel-default {!! $value->id !!}">
+                    <form action="{!! route('coverLetter.update',$coverLetter->id) !!}" method="post">
+                        <input type="hidden" value="{!! csrf_token() !!}" name="_token">
+                        <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> My Education </a> </h4>
+                                <h4 class="panel-title">
+                                    <a href="#collapseB1" data-toggle="collapse">Cover Latter Add</a>
+                                </h4>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-sm-5 col-md-4 col-lg-3">
-                                        <div class="institute_avatar">
-                                            <div class="form-group">
-                                                <img src="{!! url('img/institutes/'.$value->logo) !!}"  alt="avatar" class="img-responsive" id="showInstituteImage">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-7 col-md-8 col-lg-9">
-                                        <h2 class="text-capitalize"><small>{!! $value->instituteName !!}</small></h2>
-                                        <p class="pull-left">{!! $value->city !!},</p>
-                                        <p class="pull-left">{!! $value->district !!},</p>
-                                        <p class="pull-left m-r10">{!! $value->postcode !!}</p>
-                                        <p class=" m-l10">Institute Code: {!! $value->instituteCode !!}</p>
-                                        <p>{!! $value->address !!}</p>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="coverLetterTitle">Title</label>
+                                    <input type="text" id="coverLetterTitle" class="form-control" name="coverLetterTitle" value="{!! $coverLetter->coverLetterTitle !!}">
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <label><strong><i class="fa fa-envelope-o"></i> Email: </strong></label>
-                                        <p>{!! $value->email !!}</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label><strong><i class="fa fa-internet-explorer"></i> Website: </strong></label>
-                                        <p>{!! $value->website !!}</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label><strong><i class="fa fa-phone"></i> Phone: </strong></label>
-                                        <p>{!! $value->phone !!}</p>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="coverLetter">Cover Letter</label>
+                                    <textarea id="coverLetter" class="form-control" rows="8" name="coverLetter">{!! $coverLetter->actualText !!}</textarea>
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <a href="{!! route('education.destroy',$value->id) !!}" class="delete btn btn-danger" data-token="{!! csrf_token() !!}" data-id="{!! $value->id!!}">Delete</a>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block"><i class="fa fa-save"></i> Save Cover latter</button>
+                                </div>
                             </div>
                         </div>
-                    @endforeach
+                    </form>
                 </div>
             </div>
         </div>

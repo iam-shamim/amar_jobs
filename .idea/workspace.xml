@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84f6fa92-09e8-48e6-a95b-c1457ecb487e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/coverLetterAdd.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/coverLetterEdit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/coverLetter_index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/experiencesAdd.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/experiences_index.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataBase.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/educationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/educationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style1.css" afterPath="$PROJECT_DIR$/public/css/style1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/educationAdd.blade.php" afterPath="$PROJECT_DIR$/resources/views/educationAdd.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/education_index.blade.php" afterPath="$PROJECT_DIR$/resources/views/education_index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php" afterPath="$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php" />
     </list>
     <ignored path="amar_jobs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,85 +36,35 @@
     <favorites_list name="amar_jobs" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <leaf>
+      <file leaf-file-name="coverLetterRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/coverLetterRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="50" />
+            <state relative-caret-position="513">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="educationAdd.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/educationAdd.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="65" column="85" selection-start-line="65" selection-start-column="85" selection-end-line="65" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="education_index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/education_index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="72" column="102" selection-start-line="72" selection-start-column="102" selection-end-line="72" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/loginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profileSkillsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profileSkills_index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/profileSkills_index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="47" column="99" selection-start-line="47" selection-start-column="99" selection-end-line="47" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profileSkillsEdit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/profileSkillsEdit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="47" column="108" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="educationController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="educationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/educationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+            <state relative-caret-position="864">
+              <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="education_index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/education_index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,19 +110,30 @@
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/loginController.php" />
         <option value="$PROJECT_DIR$/resources/views/profileSkillsEdit_index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/degreesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SignUpController.php" />
         <option value="$PROJECT_DIR$/app/model/institute.php" />
-        <option value="$PROJECT_DIR$/public/css/style1.css" />
         <option value="$PROJECT_DIR$/app/model/education.php" />
         <option value="$PROJECT_DIR$/resources/views/profileSkills_index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profileSkillsEdit.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style1.css" />
         <option value="$PROJECT_DIR$/resources/views/educationAdd.blade.php" />
+        <option value="$PROJECT_DIR$/app/model/company.php" />
+        <option value="$PROJECT_DIR$/resources/views/experiencesAdd.blade.php" />
+        <option value="$PROJECT_DIR$/app/model/experience.php" />
         <option value="$PROJECT_DIR$/resources/views/education_index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/experienceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/experiences_index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/educationController.php" />
+        <option value="$PROJECT_DIR$/app/model/coverLetter.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/coverLetterRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/coverLetter_index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/coverLetterController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/coverLetterAdd.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/coverLetterEdit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php" />
       </list>
     </option>
   </component>
@@ -207,6 +181,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,38 +221,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amar_jobs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amar_jobs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amar_jobs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amar_jobs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -285,30 +239,18 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="traits" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Tests" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="add&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/educationAdd.blade.php&#10;profileC&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;EducationC&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;login&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/loginController.php&#10;left&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/include/profileLeftMenu.blade.php&#10;profileSk&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;pro&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;profile&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profile.blade.php&#10;degreeR&#9;null&#9;null&#10;edu&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;skill&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;skills&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/model/skills.php&#10;ACL&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;signUp&#9;null&#9;null&#10;educationController&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;e&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/educationAdd.blade.php&#10;degree&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/degreesController.php&#10;d&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/education_index.blade.php&#10;educa&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;routes.&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;profile.b&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profile.blade.php&#10;style&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;routes.ph&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;routes.php&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;routes&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/vendor/symfony/routing/Tests/Loader/ObjectRouteLoaderTest.php&#10;profileS&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profileSkills_index.blade.php&#10;degreeCon&#9;null&#9;null&#10;deg&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/setup/degrees_index.blade.php&#10;loginCon&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/loginController.php&#10;userType&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/userTypeController.php&#10;prof&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;profileCon&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;style1&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;hero&#9;null&#9;null&#10;footer&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/include/footer.blade.php&#10;profileSkill&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;permiss&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/PermissionController.php&#10;profileCo&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;sty.css&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/style.css&#10;skills.php&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/model/skills.php&#10;model/pro&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/model/profileSkills.php&#10;test.php&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/test.php&#10;per&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/PermissionController.php&#10;route&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;profileSki&#9;null&#9;null&#10;degrees&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/setup/degreesCreate.blade.php&#10;ker&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Kernel.php&#10;filestyle&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/plugins/filestyle/bootstrap-filestyle.min.js&#10;sty&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/style.css" />
+    <property name="SearchEverywhereHistoryKey" value="edu&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/education_index.blade.php&#10;education&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;profileC&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;exper&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/experienceController.php&#10;profileS&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;coverLetterAdd&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/coverLetterAdd.blade.php&#10;cover&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/coverLetter_index.blade.php&#10;profile.b&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profile.blade.php&#10;exp&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/experienceController.php&#10;profileSki&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;skill&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profileSkills_index.blade.php&#10;left&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/include/profileLeftMenu.blade.php&#10;coverLetterController&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;educa&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/education_index.blade.php&#10;experience_i&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/experiences_index.blade.php&#10;ex&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/education_index.blade.php&#10;company&#9;null&#9;null&#10;add&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/educationAdd.blade.php&#10;sty&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;ed&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/educationAdd.blade.php&#10;style&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;educationAdd&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/educationAdd.blade.php&#10;e&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;experienceController&#9;null&#9;null&#10;deg&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/degreesController.php&#10;degrees_i&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/setup/degrees_index.blade.php&#10;routes.php&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;EducationC&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;login&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/loginController.php&#10;profileSk&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileSkillsController.php&#10;pro&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;profile&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/profile.blade.php&#10;degreeR&#9;null&#9;null&#10;skills&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/model/skills.php&#10;ACL&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;signUp&#9;null&#9;null&#10;educationController&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/educationController.php&#10;degree&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/degreesController.php&#10;d&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/resources/views/education_index.blade.php&#10;routes.&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;routes.ph&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/routes.php&#10;degreeCon&#9;null&#9;null&#10;loginCon&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/loginController.php&#10;userType&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/userTypeController.php&#10;prof&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;profileCon&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/app/Http/Controllers/profileController.php&#10;style1&#9;FILE&#9;file:///Applications/MAMP/htdocs/amar_jobs/public/css/style1.css&#10;hero&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -388,26 +330,31 @@
       <workItem from="1461120586885" duration="11816000" />
       <workItem from="1461177740241" duration="11000" />
       <workItem from="1461220922593" duration="6483000" />
-      <workItem from="1461286869394" duration="3251000" />
+      <workItem from="1461286869394" duration="3400000" />
+      <workItem from="1461325035920" duration="5273000" />
+      <workItem from="1461393224597" duration="11529000" />
+      <workItem from="1461421013950" duration="2126000" />
+      <workItem from="1461515220282" duration="6062000" />
+      <workItem from="1461562796393" duration="282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94438000" />
+    <option name="totallyTimeSpent" value="119859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1020" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13844515" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11661342" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893157" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.555914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29462364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -460,89 +407,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/img/people/4da3d1a5b2afa0ed5701a7169875ead7.jpg" />
-    <entry file="file://$PROJECT_DIR$/resources/views/acl/permission_index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/404.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="228" column="16" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="63" column="63" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PermissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedAtLeastOnce.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/background/hero.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/AdminLTE.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/include/mainLayoutHeader.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -575,13 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/setup/degrees_index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -639,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/degreesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -669,14 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="887" column="62" selection-start-line="887" selection-start-column="62" selection-end-line="887" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,57 +550,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/img/institutes/80f4288960f3211fa55dd7a9557d9a82.jpg" />
-    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="112" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="151" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/profileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/loginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profileSkills_index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="47" column="99" selection-start-line="47" selection-start-column="99" selection-end-line="47" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profileSkillsEdit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="47" column="108" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,42 +565,189 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profileSkillsEdit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="47" column="108" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/institute_icon.PNG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/setup/degrees_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="64" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/degreesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="96" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/company/company-icon-300.png" />
+    <entry file="file://$PROJECT_DIR$/public/css/style1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="887" column="22" selection-start-line="887" selection-start-column="22" selection-end-line="887" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/f91ecfdc7f16e3073c0ec6cd6576229f73e449ff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="255" column="9" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/experience.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/experiencesAdd.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="67" column="89" selection-start-line="67" selection-start-column="89" selection-end-line="67" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/coverLetter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profileSkills_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="123" column="43" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/experiences_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="51" column="127" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="123" column="111" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/coverLetterAdd.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/coverLetterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/profileSkillsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="560">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/profileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/experienceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/educationAdd.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="65" column="85" selection-start-line="65" selection-start-column="85" selection-end-line="65" selection-end-column="85" />
-          <folding />
+        <state relative-caret-position="703">
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/institutes/institute_icon.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/resources/views/include/profileLeftMenu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="63" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="63" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/education_index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/coverLetterEdit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="72" column="102" selection-start-line="72" selection-start-column="102" selection-end-line="72" selection-end-column="102" />
+        <state relative-caret-position="418">
+          <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/coverLetter_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/coverLetterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/educationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+        <state relative-caret-position="864">
+          <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/education_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

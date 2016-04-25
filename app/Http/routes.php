@@ -4,6 +4,7 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'ajax'], function () {
 });
 Route::group(['middleware' => ['web'],'prefix'=>'ajax','as'=>'ajax.'], function () {
     Route::get('education/search',['as'=>'education.search','uses'=>'educationController@ajaxSearch']);
+    Route::get('company/search',['as'=>'company.search','uses'=>'experienceController@ajaxSearch']);
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
@@ -27,6 +28,16 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('education',['as'=>'education.index','uses'=>'educationController@index']);
     Route::get('education/add',['as'=>'education.add','uses'=>'educationController@add']);
     Route::post('education/add',['as'=>'education.store','uses'=>'educationController@store']);
+    Route::delete('education/{id}',['as'=>'education.destroy','uses'=>'educationController@destroy']);
+    Route::get('experience',['as'=>'experience.index','uses'=>'experienceController@index']);
+    Route::get('experience/add',['as'=>'experience.add','uses'=>'experienceController@add']);
+    Route::post('experience/add',['as'=>'experience.store','uses'=>'experienceController@store']);
+    Route::delete('experience/{id}',['as'=>'experience.destroy','uses'=>'experienceController@destroy']);
+    Route::get('coverLetter',['as'=>'coverLetter.index','uses'=>'coverLetterController@index']);
+    Route::get('coverLetter/add',['as'=>'coverLetter.add','uses'=>'coverLetterController@add']);
+    Route::post('coverLetter/add',['as'=>'coverLetter.store','uses'=>'coverLetterController@store']);
+    Route::get('coverLetter/{id}/edit',['as'=>'coverLetter.edit','uses'=>'coverLetterController@edit']);
+    Route::post('coverLetter/{id}/edit',['as'=>'coverLetter.update','uses'=>'coverLetterController@update']);
 });
 Route::group(['middleware' => ['web','notAuth']], function () {
     Route::get('/password/forgot',['as'=>'password.forgot.form','uses'=>'forgotController@index']);
