@@ -13,7 +13,6 @@ use DB;
 class loginController extends Controller
 {
 
-    
     public function index(){
         return view('login');
     }
@@ -55,8 +54,12 @@ class loginController extends Controller
             $id=Auth::user()->id;
             DB::table('reset_password')->where('userID',$id)->delete();
             if($userStatus=='Active'){
-                $userID=DB::table('profiles')->where('userID',Auth::user()->id)->first();
-                $input->session()->put(['profilesID'=>$userID->id]);
+                $data=DB::table('profiles')->where('userID',Auth::user()->id)->first();
+                $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+                $input->session()->put(['profilesData'=>$data]);
+                $input->session()->put(['profilesID'=>$data->id]);
+
+
                 return redirect()->intended(url('/profile'));
             }else if($userStatus=='InActive'){
                 $input->session()->put(['userName'=>Auth::user()->userName,'password'=>$input->password,'userID'=>Auth::user()->id,'resend'=>url('mail/resend')]);

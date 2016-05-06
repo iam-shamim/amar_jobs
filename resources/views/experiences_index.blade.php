@@ -2,31 +2,7 @@
 @section('container')
     <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css" />
     <section class="main no-padding">
-        <div class="account-header">
-            <div class="container">
-                <div class="row">
-                    @if(Auth::check())
-
-                    @endif
-                    <div class="col-sm-4 col-md-3 col-lg-2">
-                        <!-- User avatar -->
-                        <div class="profile_avatar">
-                            <img src="{!! url('img/people/'.$data->profilePic) !!}" alt="avatar" class="img-responsive" id="show">
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-md-9 col-lg-10">
-                        <div class="profile_summary">
-                            <!-- User name -->
-                            <h3 class="profile_name">{!! $data->firstName !!} {!! $data->middleName !!} {!! $data->lastName !!}</h3>
-                            <!-- User status -->
-                            <p>{!! $data->summary !!}</p>
-                            <!-- Contact -->
-                            <a href="{!! route('logout') !!}" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i> Sign Out</a>
-                        </div> <!-- / .profile__summary -->
-                    </div>
-                </div> <!-- / .row -->
-            </div> <!-- / .container -->
-        </div>
+        @include('include/profileHeader')
         <div class="container">
             <div class="row">
                 @section('LeftMenuMyProfileExperience','active-profile')
@@ -46,7 +22,7 @@
                     <a href="{!! route('experience.add') !!}" class="btn btn-success pull-right">Add Experience</a>
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    @while(list($key,$value)=each($education))
+                    @while(list($key,$value)=each($experience))
                         <div class="panel panel-default  {!! $value->id !!}">
                             <div class="panel-heading">
                                 <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> My Experience </a> </h4>
@@ -54,13 +30,14 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-5 col-md-6 col-lg-7">
-                                        <h1 class=""><small>{!! $value->jobTitle !!}</small></h1>
+                                        <h1 class="no-margin no-line-height"><small>{!! $value->jobTitle !!}</small></h1>
+                                        <p class="m-t5">{!! date('d/m/Y',strtotime($value->startedOn)) !!} - @if($value->endedOn==null) Continue @else {!! date('d/m/Y',strtotime($value->endedOn)) !!} @endif</p>
                                         <p>{!! $value->jobSummary !!}</p>
                                     </div>
                                     <div class="col-sm-5 col-md-4 col-lg-3">
                                         <div class="institute_avatar">
                                             <div class="form-group">
-                                                <img src="{!! url('img/company/company-icon.png') !!}"  alt="avatar" class="img-responsive" id="showInstituteImage">
+                                                <img src="{!! $value->logo !!}"  alt="Company Logo" class="img-responsive" id="showInstituteImage">
                                             </div>
                                         </div>
                                     </div>
@@ -98,30 +75,4 @@
             </div>
         </div>
     </section>
-    <script>
-        $(document).ready(function () {
-            $('.delete').click(function (event) {
-                if(!confirm('Are you sure?')){
-                    return false;
-                }
-                var actionTo=$(this).attr('href');
-                var token=$(this).attr('data-token');
-                var id=$(this).attr('data-id');
-                $.ajax({
-                    url:actionTo,
-                    type: 'post',
-                    data: {_method: 'delete',_token:token},
-                    beforeSend:function() {
-                        $('[data-id='+id+']').fadeOut();
-                    },
-                    success: function( msg ) {
-                        $('.'+id).fadeOut();
-                    }
-                }).fail(function () {
-                    $('[data-id='+id+']').fadeIn();
-                });
-                return false;
-            })
-        });
-    </script>
 @endsection

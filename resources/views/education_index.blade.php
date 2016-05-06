@@ -2,31 +2,7 @@
 @section('container')
     <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css" />
     <section class="main no-padding">
-        <div class="account-header">
-            <div class="container">
-                <div class="row">
-                    @if(Auth::check())
-
-                    @endif
-                    <div class="col-sm-4 col-md-3 col-lg-2">
-                        <!-- User avatar -->
-                        <div class="profile_avatar">
-                            <img src="{!! url('img/people/'.$data->profilePic) !!}" alt="avatar" class="img-responsive" id="show">
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-md-9 col-lg-10">
-                        <div class="profile_summary">
-                            <!-- User name -->
-                            <h3 class="profile_name">{!! $data->firstName !!} {!! $data->middleName !!} {!! $data->lastName !!}</h3>
-                            <!-- User status -->
-                            <p>{!! $data->summary !!}</p>
-                            <!-- Contact -->
-                            <a href="{!! route('logout') !!}" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i> Sign Out</a>
-                        </div> <!-- / .profile__summary -->
-                    </div>
-                </div> <!-- / .row -->
-            </div> <!-- / .container -->
-        </div>
+        @include('include/profileHeader')
         <div class="container">
             <div class="row">
                 @section('LeftMenuMyProfileEducation','active-profile')
@@ -67,6 +43,11 @@
                                         <p class="pull-left m-r10">{!! $value->postcode !!}</p>
                                         <p class=" m-l10">Institute Code: {!! $value->instituteCode !!}</p>
                                         <p>{!! $value->address !!}</p>
+                                    </div>
+                                    <div class="col-sm-7 col-md-8 col-lg-12">
+                                       <h3><small><strong>Exam/Degree: </strong>{!! $value->degreeName !!}s</small></h3>
+                                       <h3><small><strong>Group/Subject: </strong>{!! $value->subjectName !!}</small></h3>
+                                       <h3><small><strong>Year: </strong>{!! date('d/m/Y',strtotime($value->startedOn)) !!} - @if($value->endedOn==null) Continue @else {!! date('d/m/Y',strtotime($value->endedOn)) !!} @endif</small></h3>
                                     </div>
                                 </div>
                                 <div class="row">

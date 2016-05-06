@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{!! url('bootstrap/css/bootstrap.min.css') !!}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{!! url('font-awesome/css/font-awesome.min.css') !!}">
-    
-    
+
+
   <link rel="stylesheet" type="text/css" href="{!! url('font-awesome/css/font-awesome.min.css') !!}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{!! url('theme/css/AdminLTE.css') !!}">
@@ -54,14 +54,14 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-             
+
               <!-- Notifications: style can be found in dropdown.less -->
               <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning">10</span>
                 </a>
-                
+
               </li>
               <!-- Tasks: style can be found in dropdown.less -->
               <li class="dropdown tasks-menu">
@@ -69,7 +69,7 @@
                   <i class="fa fa-exclamation-triangle"></i>
                   <span class="label label-warning">10</span>
                 </a>
-                
+
               </li>
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
@@ -98,7 +98,7 @@
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-              
+
             </ul>
           </div>
         </nav>

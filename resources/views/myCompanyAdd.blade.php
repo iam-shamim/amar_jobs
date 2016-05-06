@@ -1,12 +1,11 @@
 @extends('layouts.index')
 @section('container')
-    <link rel="stylesheet" href="{!! url('plugins/jquery-ui/jquery-ui.css') !!}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
     <section class="main no-padding">
         @include('include/profileHeader')
         <div class="container">
             <div class="row">
-                @section('LeftMenuMyProfileExperience','active-profile')
+                @section('LeftMenuMyProfileCompany','active-profile')
                 @include('include.profileLeftMenu')
                 <div class="col-md-9 col-sm-9">
                     @if($errors->any())
@@ -20,11 +19,11 @@
                     @endif
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    <form action="{!! route('experience.store') !!}" method="post" enctype="multipart/form-data">
+                    <form action="{!! route('company.store') !!}" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> Add Experience </a> </h4>
+                                <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse">Add My Company</a> </h4>
                             </div>
                             <div class="panel-body">
                                 <div class="col-lg-3">
@@ -52,73 +51,55 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="companyName">Company Name</label>
-                                        <input type="text" name="companyName" value="{!! old('companyName') !!}" class="form-control institute" id="companyName">
+                                        <input type="text" name="companyName" value="{!! old('companyName') !!}" class="form-control myCompany" id="companyName">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="city">City</label>
-                                        <input type="text" name="city" value="{!! old('city') !!}" class="form-control institute" id="city">
+                                        <input type="text" name="city" value="{!! old('city') !!}" class="form-control myCompany" id="city">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="district">District</label>
-                                        <input type="text" name="district" value="{!! old('district') !!}" class="form-control institute" id="district">
+                                        <input type="text" name="district" value="{!! old('district') !!}" class="form-control myCompany" id="district">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="postcode">Post Code</label>
-                                        <input type="text" name="postcode" value="{!! old('postcode') !!}" class="form-control institute" id="postcode">
+                                        <input type="text" name="postcode" value="{!! old('postcode') !!}" class="form-control myCompany" id="postcode">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
-                                        <input type="text" name="phone" value="{!! old('phone') !!}" class="form-control institute" id="phone">
+                                        <input type="text" name="phone" value="{!! old('phone') !!}" class="form-control myCompany" id="phone">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">email</label>
-                                        <input type="text" name="email" value="{!! old('email') !!}" class="form-control institute" id="email">
+                                        <input type="text" name="email" value="{!! old('email') !!}" class="form-control myCompany" id="email">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="website">website</label>
-                                        <input type="text" name="website" value="{!! old('website') !!}" class="form-control institute" id="website">
+                                        <input type="text" name="website" value="{!! old('website') !!}" class="form-control myCompany" id="website">
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label for="address">Company Address</label>
-                                        <textarea id="address" name="address" class="form-control institute" rows="6">{!! old('address') !!}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="jobTitle">Job Title</label>
-                                        <input type="text" name="jobTitle" value="{!! old('jobTitle') !!}" class="form-control" id="jobTitle">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="startedOn">Started On</label>
-                                        <input type="text" name="startedOn" class="form-control datepicker" value="{!! old('startedOn') !!}" id="startedOn">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="endedOn">Ended On</label>
-                                        <input type="text" name="endedOn" class="form-control datepicker" id="endedOn" value="{!! old('endedOn') !!}">
+                                        <textarea id="address" name="address" class="form-control myCompany" rows="6">{!! old('address') !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label for="jobSummary">Job Summary</label>
-                                        <textarea id="jobSummary" name="jobSummary" class="form-control" rows="6">{!! old('jobSummary') !!}</textarea>
+                                        <label for="companySummary">Company Summary</label>
+                                        <textarea id="companySummary" name="companySummary" class="form-control" rows="6">{!! old('companySummary') !!}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +107,7 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <button type="submit" class="btn btn-custom btn-block"><i class="fa fa-save"></i> Save Experience</button>
+                                            <button type="submit" class="btn btn-custom btn-block"><i class="fa fa-save"></i> Save My Company</button>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +118,6 @@
             </div>
         </div>
     </section>
-    <script src="{!! url('plugins/jquery-ui/jquery-ui.min.js') !!}"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
     <script>
@@ -154,7 +134,7 @@
             $('#email').val(valueObj.email);
             $('#website').val(valueObj.website);
             $('#showCompanyImage').attr('src',valueObj.logo);
-            $('.institute').attr('readonly','');
+            $('.myCompany').attr('readonly','');
         });
         $('.searchCompany').select2({
             placeholder: 'Search Company',
@@ -208,15 +188,6 @@
             showFunc.src = URL.createObjectURL(event.target.files[0]);
             $('[for=instituteImage].active').removeClass('active');
         };
-    </script>
-    <script>
-        $(function() {
-            $( ".datepicker" ).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                dateFormat: 'dd-m-yy'
-            });
-        });
     </script>
     <style>
         .instituteSearchResultMain{display: block;}

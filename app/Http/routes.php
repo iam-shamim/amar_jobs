@@ -6,6 +6,15 @@ Route::group(['middleware' => ['web'],'prefix'=>'ajax','as'=>'ajax.'], function 
     Route::get('education/search',['as'=>'education.search','uses'=>'educationController@ajaxSearch']);
     Route::get('company/search',['as'=>'company.search','uses'=>'experienceController@ajaxSearch']);
 });
+Route::group(['middleware' => ['web'],'prefix'=>'view','as'=>'profile.view.'], function () {
+    Route::get('coverLetter/{id}',['as'=>'coverLetter','uses'=>'coverLetterController@view']);
+    Route::get('education/{id}',['as'=>'education','uses'=>'educationController@view']);
+    Route::get('experience/{id}',['as'=>'experience','uses'=>'experienceController@view']);
+    Route::get('skills/{id}',['as'=>'skills','uses'=>'profileSkillsController@view']);
+    Route::get('profile/{id}',['as'=>'profile','uses'=>'profileController@view']);
+    Route::get('recommendations/{id}',['as'=>'recommendation','uses'=>'recommendationController@view']);
+    Route::get('company/{id}',['as'=>'company','uses'=>'companyController@view']);
+});
 
 Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/logout',['as'=>'logout','uses'=>'loginController@logout']);
@@ -38,6 +47,18 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('coverLetter/add',['as'=>'coverLetter.store','uses'=>'coverLetterController@store']);
     Route::get('coverLetter/{id}/edit',['as'=>'coverLetter.edit','uses'=>'coverLetterController@edit']);
     Route::post('coverLetter/{id}/edit',['as'=>'coverLetter.update','uses'=>'coverLetterController@update']);
+    Route::get('recommendations',['as'=>'recommendation.index','uses'=>'recommendationController@index']);
+    Route::get('recommendations/{id}/add',['as'=>'recommendation.create','uses'=>'recommendationController@create']);
+    Route::post('recommendations/{id}/add',['as'=>'recommendation.store','uses'=>'recommendationController@store']);
+    Route::get('recommendations/{id}/edit',['as'=>'recommendation.edit','uses'=>'recommendationController@edit']);
+    Route::delete('recommendations/{id}',['as'=>'recommendation.destroy','uses'=>'recommendationController@destroy']);
+    Route::put('recommendations/{id}',['as'=>'recommendation.update','uses'=>'recommendationController@update']);
+    Route::get('company',['as'=>'company.index','uses'=>'companyController@index']);
+    Route::get('company/create',['as'=>'company.create','uses'=>'companyController@create']);
+    Route::post('company/create',['as'=>'company.store','uses'=>'companyController@store']);
+    Route::get('company/{id}/delete',['as'=>'company.destroy','uses'=>'companyController@destroy']);
+    Route::get('jobs',['as'=>'jobs.index','uses'=>'jobsController@index']);
+
 });
 Route::group(['middleware' => ['web','notAuth']], function () {
     Route::get('/password/forgot',['as'=>'password.forgot.form','uses'=>'forgotController@index']);
@@ -53,6 +74,23 @@ Route::group(['middleware' => ['web','notAuth']], function () {
     Route::get('/signup',['as'=>'signup.create', 'uses'=>'SignUpController@index']);
     Route::post('/signup',['as'=>'signUp.action', 'uses'=>'SignUpController@store']);
     Route::get('/login',['as'=>'login.create', 'uses'=>'loginController@index']);
+    Route::get('/facebook',['as'=>'facebook.index', 'uses'=>'facebookController@index']);
+    Route::get('/facebook/callback',['as'=>'facebook.callback', 'uses'=>'facebookController@callback']);
+    Route::get('/github',['as'=>'github.index', 'uses'=>'facebookController@github']);
+    Route::get('/github/callback',['as'=>'github.callback', 'uses'=>'facebookController@githubCallback']);
+    Route::get('/linkedin',['as'=>'linkedin.index', 'uses'=>'facebookController@linkedin']);
+    Route::get('/linkedin/callback',['as'=>'linkedin.callback', 'uses'=>'facebookController@linkedinCallback']);
+    Route::get('/twitter',['as'=>'twitter.index', 'uses'=>'facebookController@twitter']);
+    Route::get('/twitter/callback',['as'=>'twitter.callback', 'uses'=>'facebookController@twitterCallback']);
+    Route::get('/google',['as'=>'google.index', 'uses'=>'facebookController@google']);
+    Route::get('/google/callback',['as'=>'google.callback', 'uses'=>'facebookController@googleCallback']);
+    Route::get('/bitbucket',['as'=>'bitbucket.index', 'uses'=>'facebookController@bitbucket']);
+    Route::get('/bitbucket/callback',['as'=>'bitbucket.callback', 'uses'=>'facebookController@bitbucketCallback']);
+
+    Route::get('/socialite/{service}',['as'=>'service.index', 'uses'=>'socialiteController@index']);
+    Route::get('/socialite/{service}/callback',['as'=>'service.callback', 'uses'=>'socialiteController@callback']);
+
+
 });
 Route::group(['middleware' => ['web']], function () {
     Route::get('/',['as'=>'home','uses'=> 'homeController@index']);

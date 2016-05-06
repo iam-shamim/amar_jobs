@@ -9,7 +9,7 @@
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <button href="{!! route('degrees.create') !!}" class="btn btn-info pull-right m-b5">
                     <i class="fa fa-save"></i>
-                    New Degree
+                    Save Permission
                 </button>
                 <div class="table">
                     <table class="table table-bordered table-hover">

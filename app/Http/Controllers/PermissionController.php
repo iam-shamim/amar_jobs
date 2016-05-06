@@ -15,7 +15,7 @@ class PermissionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $perPage=15;
+        $perPage=20;
         $page=(isset($_GET['page']))?$_GET['page']:1;
         $sl=$perPage*($page-1)+1;
         $userType=DB::table('user_type')->orderBy('id', 'asc')->get();

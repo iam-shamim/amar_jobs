@@ -8,12 +8,11 @@ use App\Http\Requests\coverLetterRequest;
 use App\model\Profile;
 use DB;
 use App\model\coverLetter;
+use App\User;
 
 class coverLetterController extends Controller{
     public function index(){
-        $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
         $coverLetter=coverLetter::where('profileID',5)->first();
 
@@ -29,14 +28,30 @@ class coverLetterController extends Controller{
             $coverLetterTitle=null;
             $coverLetterText=null;
         }
-        return view('coverLetter_index',['data'=>$data,'addOrEditText'=>$addOrEditText,'routeLink'=>$routeLink,'coverLetterTitle'=>$coverLetterTitle,'coverLetterText'=>$coverLetterText]);
+        return view('coverLetter_index',['data'=>$currentUserData,'addOrEditText'=>$addOrEditText,'routeLink'=>$routeLink,'coverLetterTitle'=>$coverLetterTitle,'coverLetterText'=>$coverLetterText]);
+    }
+    public function view($id){
+        $user=User::findOrFail($id);
+        $userType=$user->userType;
+        $data=Profile::where('userID',$id)->firstOrFail();
+        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $profilesID=$data->id;
+        $coverLetter=coverLetter::where('profileID',$profilesID)->first();
+
+
+        if($coverLetter!==null){
+            $coverLetterTitle=$coverLetter->coverLetterTitle;
+            $coverLetterText=$coverLetter->actualText;
+        }else{
+            $coverLetterTitle=null;
+            $coverLetterText=null;
+        }
+        return view('coverLetterView_index',['data'=>$data,'id'=>$id,'coverLetterTitle'=>$coverLetterTitle,'coverLetterText'=>$coverLetterText,'userType'=>$userType]);
     }
     public function add(){
-        $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
-        return view('coverLetterAdd',['data'=>$data]);
+        return view('coverLetterAdd',['data'=>$currentUserData]);
     }
     public function store(coverLetterRequest $input){
         $profilesID=Session()->get('profilesID');
@@ -51,11 +66,10 @@ class coverLetterController extends Controller{
     }
     public function edit($id){
         $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
         $coverLetter=coverLetter::findOrFail($id);
-        return view('coverLetterEdit',['data'=>$data,'coverLetter'=>$coverLetter]);
+        return view('coverLetterEdit',['data'=>$currentUserData,'coverLetter'=>$coverLetter]);
     }
     public function update(coverLetterRequest $input,$id){
         $profilesID=Session()->get('profilesID');

@@ -24,16 +24,6 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-wrench"></i> <span>Menu 1</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu p-l20">
-                <li class=""><a href="#"><i class="fa fa-circle-o"></i>Sub menu 1</a></li>
-                <li class=""><a href="#"><i class="fa fa-circle-o"></i>Sub menu 2</a></li>
-                <li class=""><a href="#"><i class="fa fa-circle-o"></i>Sub menu 3</a></li>
-              </ul>
-            </li>
             <li class="@yield('setupMenu') treeview">
               <a href="#">
                 <i class="fa fa-cog"></i> <span>Setup</span> <i class="fa fa-angle-left pull-right"></i>

@@ -10,25 +10,23 @@ use DB;
 use Validator;
 use App\Http\Requests;
 use Session;
+use App\User;
 
 class experienceController extends Controller
 {
     public function index(){
-        $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
         //$education=DB::table('profile_experiences')->select(['companies.id as companiesID','companyName','city','district','postcode','address','phone','email','website','CONCAT("images/",logo) AS logo','profile_experiences.*'])->where('profileID',$profilesID)->leftJoin('companies','profile_experiences.companyID','=','companies.id')->get();
         $url=url('/img/company');
         $sql="SELECT companies.id as companieID,companyName,city,district,postcode,address,phone,email,website,CONCAT('{$url}/',logo) AS logo,profile_experiences.* FROM `profile_experiences` LEFT JOIN `companies` ON `profile_experiences`.`companyID`=`companies`.`id`  WHERE profile_experiences.profileID=$profilesID";
-        $education=DB::select($sql);
-        return view('experiences_index',['data'=>$data,'education'=>$education]);
+        $experience=DB::select($sql);
+        
+        return view('experiences_index',['data'=>$currentUserData,'experience'=>$experience]);
     }
     public function add(){
-        $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
-        return view('experiencesAdd',['data'=>$data]);
+        $currentUserData=session('profilesData');
+        return view('experiencesAdd',['data'=>$currentUserData]);
 
     }
     public function ajaxSearch(){
@@ -136,6 +134,17 @@ class experienceController extends Controller
         $data->jobTitle=$input->jobTitle;
         $data->save();
         return redirect(route('experience.index'));
+    }
+    public function view($id){
+        $user=User::findOrFail($id);
+        $userType=$user->userType;
+        $data=Profile::where('userID',$id)->firstOrFail();
+        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $profilesID=$data->id;
+        $url=url('/img/company');
+        $sql="SELECT companies.id as companieID,companyName,city,district,postcode,address,phone,email,website,CONCAT('{$url}/',logo) AS logo,profile_experiences.* FROM `profile_experiences` LEFT JOIN `companies` ON `profile_experiences`.`companyID`=`companies`.`id`  WHERE profile_experiences.profileID=$profilesID";
+        $experience=DB::select($sql);
+        return view('experiencesView_index',['data'=>$data,'id'=>$id,'experience'=>$experience,'userType'=>$userType]);
     }
     public function destroy($id){
         $profileID=Session::get('profilesID');

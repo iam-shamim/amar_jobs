@@ -10,20 +10,18 @@ use DB;
 use App\Http\Requests;
 use Validator;
 use Session;
+use App\User;
 
 class educationController extends Controller{
     public function index(){
         $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
-        $education=DB::table('profile_education')->select(['institutes.id as institutesID','instituteName','city','district','postcode','address','phone','email','website','logo','instituteCode','profile_education.*'])->where('profileID',$profilesID)->leftJoin('institutes','profile_education.institutionID','=','institutes.id')->get();
-        return view('education_index',['data'=>$data,'education'=>$education]);
+        $education=DB::table('profile_education')->select(['institutes.id as institutesID','instituteName','city','district','postcode','address','phone','email','website','logo','instituteCode','profile_education.*','degrees.degreeName',])->where('profile_education.profileID',$profilesID)->leftJoin('institutes','profile_education.institutionID','=','institutes.id')->leftJoin('degrees','profile_education.degreeID','=','degrees.id')->get();
+        return view('education_index',['data'=>$currentUserData,'education'=>$education]);
     }
     public function add(){
-        $userID=\Auth::user()->id;
-        $data=Profile::where('userID',$userID)->first();
-        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $currentUserData=session('profilesData');
 
         $mySkills=DB::table('profile_skills')
             ->select('profile_skills.id','skills.skillName','profile_skills.skillRange')
@@ -31,13 +29,14 @@ class educationController extends Controller{
             ->get();
         $skills=DB::table('skills')->orderBy('sortInd','asc')->lists('skillName','id');
         $degrees=DB::table('degrees')->lists('degreeName','id');
-        return view('educationAdd',['data'=>$data,'degrees'=>$degrees]);
+        return view('educationAdd',['data'=>$currentUserData,'degrees'=>$degrees]);
     }
     public function store(Request $input){
         $searchInstitute=$input->_searchInstitute;
         if($searchInstitute!=='null'){
             $validator=Validator::make($input->all(),[
                 'subject'=>'required',
+                'degree'=>'required',
                 'startedOn'=>'required'
             ]);
             if($validator->fails()){
@@ -51,6 +50,7 @@ class educationController extends Controller{
                 'district'=>'required',
                 'instituteCode'=>'required|unique:institutes,instituteCode',
                 'address'=>'required',
+                'degree'=>'required',
                 'subject'=>'required',
                 'startedOn'=>'required',
                 'instituteImage'=>'mimes:jpeg,bmp,png'
@@ -85,9 +85,21 @@ class educationController extends Controller{
         $data->degreeID=$input->degree;
         $data->subjectName=$input->subject;
         $data->startedOn=date('Y-m-d',strtotime($input->startedOn));
-        $data->endedOn=date('Y-m-d',strtotime($input->endedOn));
+        if(!empty($data->endedOn)){
+            $data->endedOn=date('Y-m-d',strtotime($input->endedOn));
+        }
         $data->save();
         return redirect(route('education.index'));
+
+    }
+    public function view($id){
+        $user=User::findOrFail($id);
+        $userType=$user->userType;
+        $data=Profile::where('userID',$id)->first();
+        $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
+        $profilesID=$data->id;
+        $education=DB::table('profile_education')->select(['institutes.id as institutesID','instituteName','city','district','postcode','address','phone','email','website','logo','instituteCode','profile_education.*','degrees.degreeName',])->where('profile_education.profileID',$profilesID)->leftJoin('institutes','profile_education.institutionID','=','institutes.id')->leftJoin('degrees','profile_education.degreeID','=','degrees.id')->get();
+        return view('educationView_index',['data'=>$data,'id'=>$id,'education'=>$education,'userType'=>$userType]);
 
     }
     public function ajaxSearch(){

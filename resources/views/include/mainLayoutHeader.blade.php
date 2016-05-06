@@ -70,6 +70,7 @@
                                 <li><a href="{!! route('dashboard.index') !!}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                             @endif
                                 <li><a href="{!! route('profile') !!}"><i class="fa fa-user"></i> My Profile</a></li>
+                                <li><a href="{!! route('jobs.index') !!}"><i class="fa fa-briefcase"></i> My Jobs</a></li>
                                 <li><a href="{!! route('logout') !!}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                         </ul>
                     </li>
