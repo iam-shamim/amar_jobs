@@ -17,11 +17,9 @@ class experienceController extends Controller
     public function index(){
         $currentUserData=session('profilesData');
         $profilesID=Session()->get('profilesID');
-        //$education=DB::table('profile_experiences')->select(['companies.id as companiesID','companyName','city','district','postcode','address','phone','email','website','CONCAT("images/",logo) AS logo','profile_experiences.*'])->where('profileID',$profilesID)->leftJoin('companies','profile_experiences.companyID','=','companies.id')->get();
         $url=url('/img/company');
         $sql="SELECT companies.id as companieID,companyName,city,district,postcode,address,phone,email,website,CONCAT('{$url}/',logo) AS logo,profile_experiences.* FROM `profile_experiences` LEFT JOIN `companies` ON `profile_experiences`.`companyID`=`companies`.`id`  WHERE profile_experiences.profileID=$profilesID";
         $experience=DB::select($sql);
-        
         return view('experiences_index',['data'=>$currentUserData,'experience'=>$experience]);
     }
     public function add(){

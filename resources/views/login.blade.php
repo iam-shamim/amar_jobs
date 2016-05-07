@@ -36,12 +36,12 @@
                             </form>
                             <div><p class="text-center">Login With</p></div>
                             <div class="text-center">
-                                <a href="{!! route('facebook.index') !!}" class="m-r10"><i class="fa fa-facebook-official fa-2x"></i></a>
-                                <a href="{!! route('google.index') !!}" class="m-r10"><i class="fa fa-google fa-2x"></i></a>
-                                <a href="{!! route('twitter.index') !!}"><i class="fa fa-twitter fa-2x"></i></a>
-                                <a href="{!! route('linkedin.index') !!}" class="m-r10"><i class="fa fa-linkedin fa-2x"></i></a>
-                                <a href="{!! route('github.index') !!}" class="m-r10"><i class="fa fa-github fa-2x"></i></a>
-                                <a href="{!! route('bitbucket.index') !!}" class="m-r10"><i class="fa fa-bitbucket fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','facebook') !!}" class="m-r10"><i class="fa fa-facebook-official fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','google') !!}" class="m-r10"><i class="fa fa-google fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','twitter') !!}"><i class="fa fa-twitter fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','linkedin') !!}" class="m-r10"><i class="fa fa-linkedin fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','github') !!}" class="m-r10"><i class="fa fa-github fa-2x"></i></a>
+                                <a href="{!! route('socialite.index','bitbucket') !!}" class="m-r10"><i class="fa fa-bitbucket fa-2x"></i></a>
                             </div>
                         </div>
                         <div class="panel-footer">

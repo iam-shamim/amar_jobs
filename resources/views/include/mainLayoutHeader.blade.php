@@ -15,6 +15,7 @@
                 <li class="new-ads"><a href="account_create_post" class="btn btn-ads btn-block">Advertise</a></li>
                 @if(!Auth::check())
                 <li><a href="{!! route('signup.create') !!}">Signup</a></li>
+                <li><a href="{!! route('login.create') !!}">Login</a></li>
                 @endif
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;Pages</a>
@@ -71,6 +72,7 @@
                             @endif
                                 <li><a href="{!! route('profile') !!}"><i class="fa fa-user"></i> My Profile</a></li>
                                 <li><a href="{!! route('jobs.index') !!}"><i class="fa fa-briefcase"></i> My Jobs</a></li>
+                                <li><a href="{!! route('settings.index') !!}"><i class="fa fa-wrench"></i> Settings</a></li>
                                 <li><a href="{!! route('logout') !!}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                         </ul>
                     </li>

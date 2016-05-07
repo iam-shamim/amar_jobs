@@ -58,6 +58,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('company/create',['as'=>'company.store','uses'=>'companyController@store']);
     Route::get('company/{id}/delete',['as'=>'company.destroy','uses'=>'companyController@destroy']);
     Route::get('jobs',['as'=>'jobs.index','uses'=>'jobsController@index']);
+    Route::get('settings',['as'=>'settings.index','uses'=>'settingsGeneralController@index']);
 
 });
 Route::group(['middleware' => ['web','notAuth']], function () {
@@ -66,6 +67,7 @@ Route::group(['middleware' => ['web','notAuth']], function () {
     Route::post('/password/forgot',['as'=>'password.forgot.action', 'uses'=>'forgotController@reset']);
     Route::get('/password/reset/{resetLink}',['as'=>'password.reset', 'uses'=>'forgotController@resetConfirmation']);
     Route::post('/password/reset',['as'=>'password.reset.action', 'uses'=>'forgotController@resetAction']);
+    Route::get('/login',['as'=>'login.create', 'uses'=>'loginController@index']);
     Route::post('/login',['as'=>'login.action', 'uses'=>'loginController@auth']);
     Route::get('/activation/code',['as'=>'activation.code.form', 'uses'=>'loginController@activationForm']);
     Route::post('/activation/code',['as'=>'login.activation', 'uses'=>'loginController@activationCode']);
@@ -73,7 +75,6 @@ Route::group(['middleware' => ['web','notAuth']], function () {
     Route::post('/mail/resend',['as'=>'mail.resend','uses'=>'resendActivationController@resend']);
     Route::get('/signup',['as'=>'signup.create', 'uses'=>'SignUpController@index']);
     Route::post('/signup',['as'=>'signUp.action', 'uses'=>'SignUpController@store']);
-    Route::get('/login',['as'=>'login.create', 'uses'=>'loginController@index']);
     Route::get('/facebook',['as'=>'facebook.index', 'uses'=>'facebookController@index']);
     Route::get('/facebook/callback',['as'=>'facebook.callback', 'uses'=>'facebookController@callback']);
     Route::get('/github',['as'=>'github.index', 'uses'=>'facebookController@github']);
@@ -87,12 +88,14 @@ Route::group(['middleware' => ['web','notAuth']], function () {
     Route::get('/bitbucket',['as'=>'bitbucket.index', 'uses'=>'facebookController@bitbucket']);
     Route::get('/bitbucket/callback',['as'=>'bitbucket.callback', 'uses'=>'facebookController@bitbucketCallback']);
 
-    Route::get('/socialite/{service}',['as'=>'service.index', 'uses'=>'socialiteController@index']);
-    Route::get('/socialite/{service}/callback',['as'=>'service.callback', 'uses'=>'socialiteController@callback']);
+    Route::get('/socialite/{service}',['as'=>'socialite.index', 'uses'=>'socialiteController@index']);
+    Route::get('/socialite/{service}/callback',['as'=>'socialite.callback', 'uses'=>'socialiteController@callback']);
 
 
 });
 Route::group(['middleware' => ['web']], function () {
     Route::get('/',['as'=>'home','uses'=> 'homeController@index']);
     Route::get('test','test@index')->where(['id'=>'[A|B]']);
+    Route::get('test/socialite/{email}','socialiteController@findOrCreateByEmail');
+    Route::get('test/socialite/','socialiteController@test');
 });

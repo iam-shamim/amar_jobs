@@ -29,12 +29,6 @@
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                             <div class="panel-body">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Username</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" required="required" name="userName" value="{!! Auth::user()->userName !!}" maxlength="100" class="form-control" >
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
                                         <input type="email" required="required" name="email"  value="{!! $data->email !!}" maxlength="100" class="form-control"  >
