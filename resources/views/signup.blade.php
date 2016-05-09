@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-block btn-custom">Sign Up</button>
+                                    <button class="btn btn-bwlock btn-custom">Sign Up</button>
                                 </div>
                                 <div><p class="text-center">Sing Up With</p></div>
                                 <div class="text-center">

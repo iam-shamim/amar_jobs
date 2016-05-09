@@ -44,7 +44,7 @@ class SignUpController extends Controller
     }
     public function store(Request $input){
         $validator=Validator::make($input->all(),[
-            'userName' =>   'required|unique:users|userName',
+            'userName' =>   'required|min:5|unique:users|userName',
             'email' =>   'required|email|unique:profiles',
             'password' =>   'required|min:8',
             'Agree' =>   'required',

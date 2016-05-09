@@ -1,7 +1,7 @@
 <div class="col-md-3 col-sm-3">
     <div class="widget">
         <div class="widget-header">
-            <h3>Author Menus</h3>
+            <h3>Settings</h3>
         </div>
         <div class="widget-body">
             <ul class="author-menus">

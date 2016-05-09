@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 @section('LeftMenuMyProfileCompany','active-profile')
-                @include('include.profileLeftMenu')
+                @include('include.profileLeftMenuJobs')
                 <div class="col-md-9 col-sm-9">
                     @if($errors->any())
                         <div class="alert alert-danger">

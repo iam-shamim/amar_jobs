@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('container')
-    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="{!! url('plugins/jquery-ui/jquery-ui.css') !!}" />
     <section class="main no-padding">
         @include('include/profileHeader')
         <div class="container">
