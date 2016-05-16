@@ -77,6 +77,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('jobs/{id}/edit',['as'=>'jobs.edit','uses'=>'jobsController@edit']);
     Route::post('jobs/{id}/edit',['as'=>'jobs.update','uses'=>'jobsController@update']);
     Route::get('jobs/{id}/delete',['as'=>'jobs.destroy','uses'=>'jobsController@destroy']);
+    Route::get('jobs/{id}/featured/apply',['as'=>'jobs.featured.apply','uses'=>'jobsController@applyFeatured']);
     Route::get('jobs/{id}/featured',['as'=>'jobs.featured','uses'=>'jobsController@featured']);
     Route::get('jobs/{id}/undeclared',['as'=>'jobs.undeclared','uses'=>'jobsController@undeclared']);
 

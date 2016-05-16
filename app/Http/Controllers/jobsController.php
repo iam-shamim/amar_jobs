@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\model\featuredApply;
 use App\model\job;
 use Illuminate\Http\Request;
 
@@ -107,12 +108,24 @@ class jobsController extends Controller{
         $job=job::findOrFail($id);
         $job->featuredJob=1;
         $job->save();
+        session()->flash('success','Featured success.');
         return redirect()->back();
     }
     public function undeclared($id){
         $job=job::findOrFail($id);
         $job->featuredJob=null;
         $job->save();
+        return redirect()->back();
+    }
+    public function applyFeatured($id){
+        $job=job::findOrFail($id);
+        $job->featuredJob='';
+        $job->save();
+
+        $apply=new featuredApply();
+        $apply->jobsID=$id;
+        $apply->save();
+        session()->flash('success','Featured Apply successfully.');
         return redirect()->back();
     }
 }

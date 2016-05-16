@@ -2,7 +2,7 @@
 @section('container')
     <section class="main">
         <div class="container">
-            <div class="row ">
+            <div class="row">
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-xs-12">
@@ -29,6 +29,15 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
+                    @if(session()->has('success'))
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="alert alert-success">
+                                    <p>{!! session()->get('success') !!}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-xs-12">
                             <h2 class="no-line-height"><small><strong>{!! $job->jobTitle !!}</strong></small></h2><hr class="m-5">
@@ -53,8 +62,8 @@
                             @if(isset(Auth::user()->id) AND $job->userID==Auth::user()->id)
                                 <div>
                                     <a href="{!! route('jobs.edit',$id) !!}" class="btn-sm btn-primary">Edit Job</a>
-                                    @if($job->featuredJob==0)
-                                        <a href="{!! route('jobs.edit',$id) !!}" class="btn-sm btn-primary">Apply For Featured</a>
+                                    @if($job->featuredJob===NULL)
+                                        <a href="{!! route('jobs.featured.apply',$id) !!}" class="btn-sm btn-primary">Apply For Featured</a>
                                     @endif
                                     <a href="{!! route('jobs.destroy',$id) !!}" class="btn-sm btn-danger">Delete Job</a>
                                 </div>
