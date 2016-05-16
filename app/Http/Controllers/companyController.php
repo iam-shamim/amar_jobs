@@ -76,14 +76,14 @@ class companyController extends Controller{
                 return redirect()->back()->withErrors($validator)->withInput();
             }
             $company=new company();
-            $company->companyName=$input->companyName;
-            $company->city=$input->city;
-            $company->district=$input->district;
-            $company->postcode=$input->postcode;
-            $company->address=$input->address;
-            $company->phone=$input->phone;
-            $company->email=$input->email;
-            $company->website=$input->website;
+            $company->companyName=htmlspecialchars($input->companyName);
+            $company->city=htmlspecialchars($input->city);
+            $company->district=htmlspecialchars($input->district);
+            $company->postcode=htmlspecialchars($input->postcode);
+            $company->address=htmlspecialchars($input->address);
+            $company->phone=htmlspecialchars($input->phone);
+            $company->email=htmlspecialchars($input->email);
+            $company->website=htmlspecialchars($input->website);
             $img=$input->file('logo');
 
             if($img){
@@ -99,7 +99,7 @@ class companyController extends Controller{
         $data=new employer();
         $data->userID=$userID;
         $data->companyID=$companyID;
-        $data->companySummary=$input->companySummary;
+        $data->companySummary=htmlspecialchars($input->companySummary);
         $data->save();
         return redirect(route('company.index'));
     }

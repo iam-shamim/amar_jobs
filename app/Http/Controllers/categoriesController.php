@@ -39,7 +39,7 @@ class categoriesController extends Controller
      */
     public function store(Requests\catRequest $request){
         $categories=new categories();
-        $categories->categoryName=$request->categoryName;
+        $categories->categoryName=htmlspecialchars($request->categoryName);
         $categories->sortInd=$request->serial;
         $categories->save();
         return redirect(route('categories.index'));
@@ -78,7 +78,7 @@ class categoriesController extends Controller
     public function update(Requests\catRequest $request, $id)
     {
         $categories=categories::findOrFail($id);
-        $categories->categoryName=$request->categoryName;
+        $categories->categoryName=htmlspecialchars($request->categoryName);
         $categories->sortInd=$request->serial;
         $categories->save();
         return redirect(route('categories.index'));

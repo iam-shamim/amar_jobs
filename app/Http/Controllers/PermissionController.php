@@ -62,12 +62,6 @@ class PermissionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-
-        
-
-
-
-
         $fullRouteList=trim($request->fullRouteList,',');
         $fullRouteListExp=explode(',',$fullRouteList);
         $userTypeId=DB::table('user_type')->lists('id');

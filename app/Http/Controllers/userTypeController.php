@@ -48,7 +48,7 @@ class userTypeController extends Controller
         }
 
         $insert=new userType();
-        $insert->userType=$request->userType;
+        $insert->userType=htmlspecialchars($request->userType);
         $insert->save();
 
         return redirect(route('user.type.index'));
@@ -92,7 +92,7 @@ class userTypeController extends Controller
         }
 
         $data=userType::findOrFail($id);
-        $data->userType=$input->userType;
+        $data->userType=htmlspecialchars($input->userType);
         $data->save();
         return redirect(route('user.type.index'));
     }

@@ -1,7 +1,4 @@
 <?php
-Route::group(['middleware' => ['web','auth'],'prefix'=>'ajax'], function () {
-
-});
 Route::group(['middleware' => ['web'],'prefix'=>'ajax','as'=>'ajax.'], function () {
     Route::get('education/search',['as'=>'education.search','uses'=>'educationController@ajaxSearch']);
     Route::get('company/search',['as'=>'company.search','uses'=>'experienceController@ajaxSearch']);
@@ -76,6 +73,13 @@ Route::group(['middleware' => ['web','auth']], function () {
     // jobs
     Route::get('jobs',['as'=>'jobs.index','uses'=>'jobsController@index']);
     Route::get('jobs/create',['as'=>'jobs.create','uses'=>'jobsController@create']);
+    Route::post('jobs/create',['as'=>'jobs.store','uses'=>'jobsController@store']);
+    Route::get('jobs/{id}/edit',['as'=>'jobs.edit','uses'=>'jobsController@edit']);
+    Route::post('jobs/{id}/edit',['as'=>'jobs.update','uses'=>'jobsController@update']);
+    Route::get('jobs/{id}/delete',['as'=>'jobs.destroy','uses'=>'jobsController@destroy']);
+    Route::get('jobs/{id}/featured',['as'=>'jobs.featured','uses'=>'jobsController@featured']);
+    Route::get('jobs/{id}/undeclared',['as'=>'jobs.undeclared','uses'=>'jobsController@undeclared']);
+
 
 
 });
@@ -107,6 +111,11 @@ Route::group(['middleware' => ['web','notAuth']], function () {
 
 });
 Route::group(['middleware' => ['web']], function () {
+    Route::get('jobs/{id}',['as'=>'jobs.view','uses'=>'jobsController@view']);
+});
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('jobs/{id}',['as'=>'jobs.view','uses'=>'jobsController@view']);
     Route::get('/',['as'=>'home','uses'=> 'homeController@index']);
     Route::get('test','test@index')->where(['id'=>'[A|B]']);
     Route::get('test/socialite/{email}','socialiteController@findOrCreateByEmail');

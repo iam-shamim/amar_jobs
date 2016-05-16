@@ -59,15 +59,15 @@ class educationController extends Controller{
                 return redirect()->back()->withErrors($validator)->withInput();
             }
             $institute=new institute();
-            $institute->instituteName=$input->instituteName;
-            $institute->city=$input->city;
-            $institute->district=$input->district;
-            $institute->postcode=$input->postcode;
-            $institute->address=$input->address;
-            $institute->phone=$input->phone;
-            $institute->email=$input->email;
-            $institute->website=$input->website;
-            $institute->instituteCode=$input->instituteCode;
+            $institute->instituteName=htmlspecialchars($input->instituteName);
+            $institute->city=htmlspecialchars($input->city);
+            $institute->district=htmlspecialchars($input->district);
+            $institute->postcode=htmlspecialchars($input->postcode);
+            $institute->address=htmlspecialchars($input->address);
+            $institute->phone=htmlspecialchars($input->phone);
+            $institute->email=htmlspecialchars($input->email);
+            $institute->website=htmlspecialchars($input->website);
+            $institute->instituteCode=htmlspecialchars($input->instituteCode);
             $img=$input->file('instituteImage');
             if($img){
                 $imgName=md5(str_random(30).time().'_'.$input->file('instituteImage')->getClientOriginalName()).'.'.$input->file('instituteImage')->getClientOriginalExtension();
@@ -83,7 +83,7 @@ class educationController extends Controller{
         $data->profileID=$profilesID;
         $data->institutionID=$instituteID;
         $data->degreeID=$input->degree;
-        $data->subjectName=$input->subject;
+        $data->subjectName=htmlspecialchars($input->subject);
         $data->startedOn=date('Y-m-d',strtotime($input->startedOn));
         if(!empty($data->endedOn)){
             $data->endedOn=date('Y-m-d',strtotime($input->endedOn));

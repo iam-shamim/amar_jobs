@@ -55,11 +55,11 @@ class profileController extends Controller
         }
         $userID=\Auth::user()->id;
         $data=Profile::where('userID',$userID)->first();
-        $data->email=$input->email;
-        $data->firstName=$input->firstName;
-        $data->lastName=$input->lastName;
-        $data->middleName=$input->middleName;
-        $data->phone=$input->phone;
+        $data->email=htmlspecialchars($input->email);
+        $data->firstName=htmlspecialchars($input->firstName);
+        $data->lastName=htmlspecialchars($input->lastName);
+        $data->middleName=htmlspecialchars($input->middleName);
+        $data->phone=htmlspecialchars($input->phone);
         $data->DOB=date('Y/m/d',strtotime($input->birthDay));
         $data->gender=$input->gender;
         $img=$input->file('profilePic');
@@ -72,7 +72,7 @@ class profileController extends Controller
             $data->profilePic=$imgName;
         }
 
-        $data->summary=$input->summary;
+        $data->summary=htmlspecialchars($input->summary);
         $data->update();
 
         $userID=\Auth::user()->id;

@@ -55,12 +55,10 @@ class coverLetterController extends Controller{
     }
     public function store(coverLetterRequest $input){
         $profilesID=Session()->get('profilesID');
-        $coverLetterTitle=$input->coverLetterTitle;
-        $coverLetter=$input->coverLetter;
         $data=new coverLetter();
         $data->profileID=$profilesID;
-        $data->coverLetterTitle=$input->coverLetterTitle;
-        $data->actualText=$input->coverLetter;
+        $data->coverLetterTitle=htmlspecialchars($input->coverLetterTitle);
+        $data->actualText=htmlspecialchars($input->coverLetter);
         $data->save();
         return redirect(route('coverLetter.index'));
     }
@@ -73,11 +71,9 @@ class coverLetterController extends Controller{
     }
     public function update(coverLetterRequest $input,$id){
         $profilesID=Session()->get('profilesID');
-        $coverLetterTitle=$input->coverLetterTitle;
-        $coverLetter=$input->coverLetter;
         $data=coverLetter::where('id',$id)->where('profileID',$profilesID)->firstOrFail();
-        $data->coverLetterTitle=$input->coverLetterTitle;
-        $data->actualText=$input->coverLetter;
+        $data->coverLetterTitle=htmlspecialchars($input->coverLetterTitle);
+        $data->actualText=htmlspecialchars($input->coverLetter);
         $data->save();
         return redirect(route('coverLetter.index'));
     }

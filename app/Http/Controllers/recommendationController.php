@@ -27,7 +27,7 @@ class recommendationController extends Controller{
         $data=Profile::where('userID',$id)->first();
         $data->profilePic=($data->profilePic===NULL)? 'default.icon.png':$data->profilePic;
         $profilesID=$data->id;
-        $recommendation=DB::table('profile_recommendations')->select(['profile_recommendations.*','profiles.firstName','profiles.lastName','profiles.middleName','profiles.userID'])->leftJoin('profiles','profile_recommendations.recommendationBy','=','profiles.id')->where('profileID',$profilesID)->orderBy('profile_recommendations.id', 'desc')->paginate($this->perPageData);
+        $recommendation=DB::table('profile_recommendations')->select(['profile_recommendations.*','profiles.firstName','profiles.lastName','profiles.middleName','profiles.userID'])->leftJoin('profiles','profile_recommendations.recommendationBy','=','profiles.id')->where('profileID',$profilesID)->orderBy('profile_recommendations.id', 'asc')->paginate($this->perPageData);
         
         return view('recommendationView_index',['data'=>$data,'id'=>$id,'recommendation'=>$recommendation,'userType'=>$userType]);
     }
@@ -43,7 +43,7 @@ class recommendationController extends Controller{
     }
     public function store(Request $input,$id){
         if($id==\Auth::user()->id){
-            return App::abort(403, 'Unauthorized action.');
+            return App::abort(403,'Unauthorized action.');
         }
 
         $validator=Validator::make($input->all(),[
@@ -59,7 +59,7 @@ class recommendationController extends Controller{
         $data=new recommendation();
         $data->profileID=$profilesID;
         $data->recommendationBy=$recommendationBy;
-        $data->recommendationText=$input->recommendation;
+        $data->recommendationText=htmlspecialchars($input->recommendation);
         $data->save();
 
         $count=recommendation::where('profileID',$profilesID)->count();
@@ -67,7 +67,6 @@ class recommendationController extends Controller{
         return redirect(route('profile.view.recommendation',[$id,'page'=>$totalPage,'#Link'.$data->id]));
     }
     public function edit($id){
-
         $profileID=Session::get('profilesID');
         $recommendation=recommendation::where('id',$id)->where('recommendationBy',$profileID)->firstOrFail();
         $data=Profile::where('id',$recommendation->profileID)->firstOrFail();
@@ -83,7 +82,6 @@ class recommendationController extends Controller{
         return view('recommendationEdit',['data'=>$data,'id'=>$id,'recommendation'=>$recommendation,'userType'=>$userType]);
     }
     public function update(Request $input,$id){
-
         $validator=Validator::make($input->all(),[
             'recommendation'=>'required|min:10|max:1000'
         ]);
@@ -92,7 +90,7 @@ class recommendationController extends Controller{
         }
         $recommendationBy=$input->session()->get('profilesID');
         $data=recommendation::where('id',$id)->where('recommendationBy',$recommendationBy)->firstOrFail();
-        $data->recommendationText=$input->recommendation;
+        $data->recommendationText=htmlspecialchars($input->recommendation);
         $data->save();
 
         $recommendationToProfileID=$data->profileID;

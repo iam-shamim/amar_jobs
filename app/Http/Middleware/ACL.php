@@ -60,7 +60,6 @@ class ACL
                 }
             }
         }
-        //$user=DB::table('permissions')->where('')->get();
         return $next($request);
     }
 }

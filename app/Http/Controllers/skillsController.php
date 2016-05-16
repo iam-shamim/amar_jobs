@@ -38,7 +38,7 @@ class skillsController extends Controller{
      */
     public function store(Requests\skillsRequest $request){
         $skills=new skills();
-        $skills->skillName=$request->skillName;
+        $skills->skillName=htmlspecialchars($request->skillName);
         $skills->sortInd=$request->serial;
         $skills->save();
         return redirect(route('skills.index'));
@@ -77,7 +77,7 @@ class skillsController extends Controller{
     public function update(Requests\skillsRequest $request, $id)
     {
         $skills=skills::find($id);;
-        $skills->skillName=$request->skillName;
+        $skills->skillName=htmlspecialchars($request->skillName);
         $skills->sortInd=$request->serial;
         $skills->save();
         return redirect(route('skills.index'));

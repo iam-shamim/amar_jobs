@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\model\degrwees;
+use App\model\degrees;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -39,7 +39,7 @@ class degreesController extends Controller
      */
     public function store(Requests\degreeRequest $request){
         $degree=new degrees();
-        $degree->degreeName=$request->degreeName;
+        $degree->degreeName=htmlspecialchars($request->degreeName);
         $degree->sortInd=$request->serial;
         $degree->save();
         return redirect(route('degrees.index'));
@@ -78,7 +78,7 @@ class degreesController extends Controller
     public function update(Requests\degreeRequest $request, $id)
     {
         $degree=degrees::findOrFail($id);;
-        $degree->degreeName=$request->degreeName;
+        $degree->degreeName=htmlspecialchars($request->degreeName);
         $degree->sortInd=$request->serial;
         $degree->save();
         return redirect(route('degrees.index'));

@@ -25,7 +25,6 @@ class experienceController extends Controller
     public function add(){
         $currentUserData=session('profilesData');
         return view('experiencesAdd',['data'=>$currentUserData]);
-
     }
     public function ajaxSearch(){
         $term=(isset($_GET['term']))?$_GET['term']:'techmasters';
@@ -104,14 +103,14 @@ class experienceController extends Controller
                 return redirect()->back()->withErrors($validator)->withInput();
             }
             $company=new company();
-            $company->companyName=$input->companyName;
-            $company->city=$input->city;
-            $company->district=$input->district;
-            $company->postcode=$input->postcode;
-            $company->address=$input->address;
-            $company->phone=$input->phone;
-            $company->email=$input->email;
-            $company->website=$input->website;
+            $company->companyName=htmlspecialchars($input->companyName);
+            $company->city=htmlspecialchars($input->city);
+            $company->district=htmlspecialchars($input->district);
+            $company->postcode=htmlspecialchars($input->postcode);
+            $company->address=htmlspecialchars($input->address);
+            $company->phone=htmlspecialchars($input->phone);
+            $company->email=htmlspecialchars($input->email);
+            $company->website=htmlspecialchars($input->website);
             $img=$input->file('logo');
             if($img){
                 $imgName=md5(str_random(30).time().'_'.$input->file('logo')->getClientOriginalName()).'.'.$input->file('logo')->getClientOriginalExtension();
@@ -128,8 +127,8 @@ class experienceController extends Controller
         $data->companyID=$companyID;
         $data->startedOn=date('Y-m-d',strtotime($input->startedOn));
         $data->endedOn=date('Y-m-d',strtotime($input->endedOn));
-        $data->jobSummary=$input->jobSummary;
-        $data->jobTitle=$input->jobTitle;
+        $data->jobSummary=htmlspecialchars($input->jobSummary);
+        $data->jobTitle=htmlspecialchars($input->jobTitle);
         $data->save();
         return redirect(route('experience.index'));
     }

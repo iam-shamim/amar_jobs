@@ -35,7 +35,7 @@ class profileSkillsController extends Controller
         }
         $profileSkills=new profileSkills();
         $profileSkills->profileID=$profilesID;
-        $profileSkills->skillID=$input->skillName;
+        $profileSkills->skillID=htmlspecialchars($input->skillName);
         $profileSkills->skillRange=$input->skillRange;
         $profileSkills->save();
         return redirect()->back();
@@ -58,7 +58,7 @@ class profileSkillsController extends Controller
         $profileSkills=profileSkills::findOrFail($id);
         $data=profileSkills::where('id',$id)->where('profileID',$profilesID)->firstOrFail();
         $profileSkills->profileID=$profilesID;
-        $profileSkills->skillID=$input->skillName;
+        $profileSkills->skillID=htmlspecialchars($input->skillName);
         $profileSkills->skillRange=$input->skillRange;
         $profileSkills->save();
         return redirect(route('profile.skills'));

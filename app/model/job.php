@@ -4,6 +4,6 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class userType extends Model{
-    protected $table='user_type';
+class job extends Model{
+    protected $table='jobs';
 }
