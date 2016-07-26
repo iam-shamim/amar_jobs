@@ -5,3 +5,10 @@
 **Demo**
 http://jobs.shamim.rocks
 #User & Password
+**User Type**
+Root
+```
+1.
+User Name: nurunNobiShamimRoot
+password: nurunNobiShamimRoot
+```
