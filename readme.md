@@ -5,7 +5,7 @@
 **Demo: **
 http://jobs.shamim.rocks
 #User & Password
-**User Type**__
+**User Type**<br>
 Root
 ```
 1.
