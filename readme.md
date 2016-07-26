@@ -13,6 +13,12 @@ User Name: nurunNobiShamimRoot
 password: nurunNobiShamimRoot
 ```
 ```
+Admin
+1.
+User Name: 
+password: 
+```
+```
 Company
 1.
 User Name: nurunNobiShamim
