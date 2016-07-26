@@ -26,4 +26,33 @@ password: rahimMullla
 User Name: mizanurRahman
 password: mizanurRahman
 
+4.
+User Name: kamrulHasan
+password: kamrulHasan
+
+5.
+User Name: rubelHasan
+password: rubelHasan
+
+6.
+User Name: shahedTanvir
+password: shahedTanvir
+
+JobSeeker
+1.
+User Name: rahulBadsha
+password: rahulBadsha
+
+2.
+User Name: kamalUddin
+password: kamalUddin
+
+3.
+User Name: sabujHosain
+password: sabujHosain
+
+4.
+User Name: nurun_nobi_shamim
+password: nurun_nobi_shamim
+
 ```
