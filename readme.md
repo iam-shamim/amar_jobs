@@ -2,10 +2,10 @@
 
 [![Build Status](http://shamim.rocks/ajobs/screen-shot.png)](https://travis-ci.org/laravel/framework)
 
-**Demo**
+**Demo: **
 http://jobs.shamim.rocks
 #User & Password
-**User Type**
+**User Type**__
 Root
 ```
 1.
