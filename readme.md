@@ -12,3 +12,18 @@ Root
 User Name: nurunNobiShamimRoot
 password: nurunNobiShamimRoot
 ```
+```
+Company
+1.
+User Name: nurunNobiShamim
+password: nurunNobiShamim
+
+2.
+User Name: rahimMullla
+password: rahimMullla
+
+3.
+User Name: mizanurRahman
+password: mizanurRahman
+
+```
